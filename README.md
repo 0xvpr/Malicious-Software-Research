@@ -1,8 +1,8 @@
 # Malware Development Techniques
 #### Table of Contents
-[Payload Storage](#payload-storage-locations)
-[Ransomware](#ransomware)
-[LOL](#LOL)
+- [Payload Storage](#payload-storage-locations)
+- [Ransomware](#ransomware)
+- [LOL](#LOL)
 
 ### Storage Locations
 - <a href="https://github.com/0xvpr/MWD/blob/main/data/main.c">.data</a>
