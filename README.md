@@ -1,5 +1,5 @@
 # Malware Development Techniques
-#### Table of Contents
+## Table of Contents
 - [Payload Storage](#payload-storage-locations)
 - [Ransomware](#ransomware)
 - [LOL](#LOL)
