@@ -13,15 +13,11 @@
 - <a href="https://github.com/0xvpr/MWD/blob/main/data/main.c">.data</a>
 - <a href="https://github.com/0xvpr/MWD/blob/main/text/main.c">.text</a>
 - <a href="https://github.com/0xvpr/MWD/blob/main/rsc/main.c">.rsc</a>
-
 ### Remote Thread Injection
-
 ### Ransomware
 - TODO
-
 ### Living off the Land
 - TODO
-
 ## Learning Resources
 ### Reflective DLL Injection
 <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF explanation</a>
