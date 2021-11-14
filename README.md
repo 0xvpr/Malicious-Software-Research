@@ -3,7 +3,6 @@
 - [Code Examples](#code-examples)
     - [Storage Techniques](#storage-techniques)
     - [Injection Techniques](#injection-techniques)
-    - [Remote Thread Injection](#remote-thread-injection)
     - [Ransomware](#ransomware)
     - [Living off the Land](#living-off-the-land)
 - [Learning Resources](#learning-resources)
