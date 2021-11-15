@@ -54,3 +54,6 @@ dkms.conf
 
 # Folders
 RTO
+
+# Misc
+*compile_flags.txt
