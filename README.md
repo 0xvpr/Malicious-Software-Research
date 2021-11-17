@@ -1,12 +1,19 @@
 # Malicious Software Research
 ## Navigation
+- [Storage Techniques](#storage-techniques)
+- [Injection Techniques](#injection-techniques)
+- [Obfuscation Techniques](#obfuscation-techniques)
+- [Evasion Techniques](#evasion-techniques)
+- [Ransomware](#ransomware)
+- [Living off the Land](#living-off-the-land)
+- [Client Server Models](#client-server-models)
 ### **Code Examples**
 1. Storage Techniques  
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/1.data">.data</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/2.text">.text</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/3.rsc">.rsc</a>  
 2. Injection Techniques  
-    - <a href="https://github.com/0xvpr/MWD/blob/main/2.injection-techniques/1.crt/crt.c">CreateRemoteThread</a>
+    - <a href="https://github.com/0xvpr/MWD/blob/main/2.injection-techniques/1.crt">CreateRemoteThread</a>
 3. Obfuscation Techniques
 4. Evasion Techniques
 5. Ransomware 
