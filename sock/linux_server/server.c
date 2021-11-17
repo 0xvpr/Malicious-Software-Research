@@ -1,29 +1,26 @@
-#include <netinet/in.h> // htons
-#include <arpa/inet.h>  // inet_addr
-#include <sys/socket.h> // socket, bind
-#include <sys/types.h>  //
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+#include <sys/socket.h> // socket, bind, send, recv
+#include <arpa/inet.h>  // inet_addr, htons, sockaddr_in
+#include <string.h>     // memset
+#include <stdio.h>      // snprintf
 
 #define BUFFER 0x00001000
 
 #ifndef SOCKADDR_IN
-typedef struct sockaddr_in(SOCKADDR_IN);
+typedef struct sockaddr_in SOCKADDR_IN;
 #endif
 
 int main(void)
 {
     int         server_socket;        // Used for creating socket.
     int         client_socket;        // Used for accepting connection.
-    SOCKADDR_IN server_addr;          // Structure required by bind()
+    SOCKADDR_IN server_addr;          // Hosted server struct
     char        send_buffer[BUFFER];  // Outbound buffer of 4 Kilobytes
     char        recv_buffer[BUFFER];  // Inbound buffer of 4 Kilobytes
 
     // Setup server address
-    server_addr.sin_family      = AF_INET;      // IPv4
-    server_addr.sin_port        = htons(8889);  // Port
-    server_addr.sin_addr.s_addr = INADDR_ANY;   // Address
+    server_addr.sin_family      = AF_INET;                  // IPv4
+    server_addr.sin_port        = htons(8889);              // Port
+    server_addr.sin_addr.s_addr = inet_addr("198.186.1.2"); // Address
 
     // Creates a TCP Socket 
     server_socket = socket(AF_INET, SOCK_STREAM, 0);
