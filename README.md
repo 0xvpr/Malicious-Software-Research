@@ -1,16 +1,18 @@
 # Malicious Software Research
 ## Navigation
 ### **Code Examples**
-- Storage Techniques  
-  1. <a href="https://github.com/0xvpr/MWD/blob/main/storage-techniques/1.data/main.c">.data</a>
-  2. <a href="https://github.com/0xvpr/MWD/blob/main/storage-techniques/2.text/main.c">.text</a>
-  3. <a href="https://github.com/0xvpr/MWD/blob/main/storage-techniques/3.rsc/main.c">.rsc</a>  
-- Injection Techniques  
-  1. <a href="https://github.com/0xvpr/MWD/blob/main/injection-techniques/1.crt/main.c">CreateRemoteThread</a>
-- Ransomware  
-- Living off the Land  
-- Client Server Models
-  1. <a href="https://github.com/0xvpr/MWD/blob/main/sock/linux_server">Linux Server to Windows Client</a>
+1. Storage Techniques  
+  1. <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/1.data/main.c">.data</a>
+  2. <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/2.text/main.c">.text</a>
+  3. <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/3.rsc/main.c">.rsc</a>  
+2. Injection Techniques  
+  1. <a href="https://github.com/0xvpr/MWD/blob/main/2.injection-techniques/1.crt/main.c">CreateRemoteThread</a>
+3. Obfuscation Techniques
+4. Evasion Techniques
+5. Ransomware 
+6. Living off the Land
+7. Client Server Models
+  1. <a href="https://github.com/0xvpr/MWD/blob/main/7.socket/linux_server">Linux Server to Windows Client</a>
 ### **Learning Resources**
 - Reflective DLL Injection  
   1. <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF Explanation</a>  
