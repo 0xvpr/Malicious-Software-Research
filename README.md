@@ -2,11 +2,11 @@
 ## Navigation
 ### **Code Examples**
 1. Storage Techniques  
-  - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/1.data/main.c">.data</a>
-  - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/2.text/main.c">.text</a>
-  - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/3.rsc/main.c">.rsc</a>  
+  - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/1.data">.data</a>
+  - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/2.text">.text</a>
+  - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/3.rsc">.rsc</a>  
 2. Injection Techniques  
-  - <a href="https://github.com/0xvpr/MWD/blob/main/2.injection-techniques/1.crt/main.c">CreateRemoteThread</a>
+  - <a href="https://github.com/0xvpr/MWD/blob/main/2.injection-techniques/1.crt/crt.c">CreateRemoteThread</a>
 3. Obfuscation Techniques
 4. Evasion Techniques
 5. Ransomware 
