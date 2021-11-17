@@ -9,6 +9,8 @@
   1. <a href="https://github.com/0xvpr/MWD/blob/main/injection-techniques/1.crt/main.c">CreateRemoteThread</a>
 - Ransomware  
 - Living off the Land  
+- Client Server Models
+  1. <a href="https://github.com/0xvpr/MWD/blob/main/sock/linux">Linux Server to Windows Client</a>
 ### **Learning Resources**
 - Reflective DLL Injection  
   1. <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF Explanation</a>  

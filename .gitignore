@@ -56,4 +56,4 @@ dkms.conf
 RTO
 
 # Misc
-*compile_flags.txt
+compile_flags.txt

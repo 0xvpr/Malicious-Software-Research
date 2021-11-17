@@ -1,0 +1,6 @@
+# Compiled files
+server
+*.exe
+
+# Misc
+compile_flags.txt
