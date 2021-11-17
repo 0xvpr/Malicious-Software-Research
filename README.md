@@ -1,4 +1,6 @@
 # Malicious Software Research
+This is a repository dedicated to researching, documenting, developing, and ultimately,  
+**defending** against various strains of malicious software.
 ## Navigation
 1. [Storage Techniques](#storage-techniques)
 2. [Injection Techniques](#injection-techniques)
