@@ -1,24 +1,24 @@
 # Malicious Software Research
 ## Navigation
-- [Storage Techniques][1]
-- [Injection Techniques](injection-techniques)
-- [Obfuscation Techniques](obfuscation-techniques)
-- [Evasion Techniques](evasion-techniques)
-- [Ransomware](ransomware)
-- [Living off the Land](living-off-the-land)
-- [Client Server Models](client-server-models)
+- [Storage Techniques](#storage-techniques)
+- [Injection Techniques](#injection-techniques)
+- [Obfuscation Techniques](#obfuscation-techniques)
+- [Evasion Techniques](#evasion-techniques)
+- [Ransomware](#ransomware)
+- [Living off the Land](#living-off-the-land)
+- [Client Server Models](#client-server-models)
 ### **Code Examples**
-1. [Storage Techniques][1]
+1. <a name="storage-techniques">Storage Techniques</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/1.data">.data</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/2.text">.text</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/3.rsc">.rsc</a>  
-2. Injection Techniques  
+2. <a name="injection-techniques">Injection Techniques</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/2.injection-techniques/1.crt">CreateRemoteThread</a>
-3. Obfuscation Techniques
-4. Evasion Techniques
-5. Ransomware 
-6. Living off the Land
-7. Client Server Models
+3. <a name="obfuscation-techniques">Obfuscation Techniques</a>
+4. <a name="evasion-techniques">Evasion Techniques</a>
+5. <a name="ransomware">Ransomware<a/>
+6. <a name="living-off-the-land">Living-off-the-Land<a/>
+7. <a name="client-server-models">client-server-models<a/>
     - <a href="https://github.com/0xvpr/MWD/blob/main/7.socket/linux_server">Linux Server to Windows Client</a>
 ### **Learning Resources**
 - Reflective DLL Injection  
