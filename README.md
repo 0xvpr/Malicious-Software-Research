@@ -2,6 +2,7 @@
 This is a repository dedicated to researching, documenting, developing, and ultimately,  
 **defending** against various strains of malicious software.
 ## Navigation
+0. [Shellcode Crafting](#shellcode-crafting)
 1. [Storage Techniques](#storage-techniques)
 2. [Injection Techniques](#injection-techniques)
 3. [Obfuscation Techniques](#obfuscation-techniques)
@@ -10,6 +11,8 @@ This is a repository dedicated to researching, documenting, developing, and ulti
 6. [Living off the Land](#living-off-the-land)
 7. [Client Server Models](#client-server-models)
 ### **Code Examples**
+0. <a name="shellcode-crafting">Shellcode Crafting</a>
+    - <a href="https://github.com/0xvpr/MWD/blob/main/0.shellcode-crafting/1.independent_shellcode">position independent shellcode</a>
 1. <a name="storage-techniques">Storage Techniques</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/1.data">.data</a>
     - <a href="https://github.com/0xvpr/MWD/blob/main/1.storage-techniques/2.text">.text</a>
