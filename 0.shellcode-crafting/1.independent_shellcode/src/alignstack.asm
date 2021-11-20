@@ -1,7 +1,7 @@
 extern write_hello              ; Import c function
+global alignstack               ; Important that this is above .text
 
 segment .text
-    global alignstack
 
 alignstack:
     push    rdi                 ; Backup rdi since we will be using this as our main register

@@ -15,8 +15,6 @@ typedef BOOL(WINAPI* LOOKUPPRIVILEGENAMEW)(LPCWSTR,  PLUID, LPWSTR, LPDWORD);
 typedef int(WINAPI* WPRINTF)(const wchar_t* format, ...);
 typedef void*(WINAPI* CALLOC)(size_t num, size_t size);
 
-WCHAR message[] = { L'H', L'e', L'l', L'l', L'o', L'\n', 0 };
-
 void write_hello(void)
 {
     // Dlls to dynamically load during runtime
@@ -38,5 +36,6 @@ void write_hello(void)
     CHAR wprintf_c[] = {'w', 'p', 'r', 'i', 'n', 't', 'f', 0};
     wprintfFunc = GetSymbolAddress((HANDLE)msvcrtdll, wprintf_c);
 
+    WCHAR message[] = { L'H', L'e', L'l', L'l', L'o', L'\n', 0 };
     ((WPRINTF)wprintfFunc)(message);
 }
