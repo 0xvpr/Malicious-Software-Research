@@ -1,3 +1,14 @@
+/**
+ * Creator:    VPR
+ * Created:    November 21, 2021
+ * Updated:    November 21, 2021
+ *
+ * Disclaimer:
+ *     This program has the potential to destroy an entire file-system if
+ *     you go around aimlessly messing around with the code. Be careful and
+ *     don't use it for any malicious activities.
+**/
+
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
