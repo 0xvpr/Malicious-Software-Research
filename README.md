@@ -31,7 +31,7 @@ and ultimately, **defending** against various strains of malicious software.
     - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/7.socket/1.linux_server">Windows Client to Linux Server</a>
     - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/7.socket/2.python_c2_server">Python based C2 Server</a>
 8. <a name="keyloggers">Keyloggers<a/>
-    - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/8.keyloggers/1.simple_keylogger">Windows Client to Linux Server</a>
+    - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/8.keyloggers/1.simple_keylogger">Simple Keylogger (windows)</a>
 ### **Learning Resources**
 - Reflective DLL Injection  
     - <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF Explanation</a>  
