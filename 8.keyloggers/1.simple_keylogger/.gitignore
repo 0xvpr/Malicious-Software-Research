@@ -1,0 +1,11 @@
+# Folders
+bin
+build
+
+# Compiled Files
+*.o
+*.obj
+*.exe
+
+# Misc
+compile_flags.txt
