@@ -1,4 +1,3 @@
-#include <iostream>
 #include <winsock2.h>
 #include <windows.h>
 #include <ws2tcpip.h>
@@ -10,7 +9,8 @@
 
 #define DEBUG 1
 
-int main() { 
+int main(void)
+{ 
     WSADATA     wsaData;
     WORD        wVersionRequired;
     SOCKADDR_IN server_addr;
@@ -20,7 +20,8 @@ int main() {
   
     // Request the WinSock2 API
     wVersionRequired = MAKEWORD(2, 2);
-    if ((rv = WSAStartup(wVersionRequired, &wsaData)) != EXIT_SUCCESS) {
+    if ((rv = WSAStartup(wVersionRequired, &wsaData)) != EXIT_SUCCESS)
+    {
         exit(0);
     }
 
@@ -31,28 +32,35 @@ int main() {
   
     // Connect to the server
     server = socket(AF_INET, SOCK_STREAM, 0);
-    if (connect(server, (SOCKADDR *)&server_addr, sizeof(server_addr)) == SOCKET_ERROR) {
+    if (connect(server, (SOCKADDR *)&server_addr, sizeof(server_addr)) == SOCKET_ERROR)
+    {
+        fprintf(stderr, "[-] Connection failed.\n");
+
         closesocket(server);
         WSACleanup();
         return -1;
-    } else {
-        std::cout << "[!] Connection Established.\n";
     }
-
+    else
+    {
+        printf("[!] Connection established.\n");
+    }
   
     // Listen for commands from the server
     memset(recv_buffer, 0, sizeof(recv_buffer));
-    while ((rv = recv(server, recv_buffer, BUFSIZ, 0))) {
-        std::cout << "[+] Command received: " << recv_buffer << "\n";
+    while ((rv = recv(server, recv_buffer, BUFSIZ, 0)))
+    {
+        printf("[+] Command received: %s\n", recv_buffer);
         
         // Handle commands
         if (!strncmp(recv_buffer, "whoami", 6))
         {
-            std::cout << "[!] Executing whoami...\n";
+            // Example whoami code
+            printf("[!] Executing whoami...\n");
         }
         else if (!strncmp(recv_buffer, "shutdown", 8))
         {
-            std::cout << "[!] Shutting down...\n";
+            // Example shutdown code
+            printf("[!] Shutting down...\n");
             break;
         }
 

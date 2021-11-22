@@ -25,7 +25,7 @@ This is a repository dedicated to researching, documenting, developing, and ulti
     - <a href="https://github.com/0xvpr/MWD/blob/main/5.ransomware/1.simple_recursive_encryptor">Simple Recursive Encryptor</a>
 6. <a name="living-off-the-land">Living-off-the-Land<a/>
 7. <a name="client-server-models">client-server-models<a/>
-    - <a href="https://github.com/0xvpr/MWD/blob/main/7.socket/linux_server">Linux Server to Windows Client</a>
+    - <a href="https://github.com/0xvpr/MWD/blob/main/7.socket/linux_server">Windows Client to Linux Server</a>
 ### **Learning Resources**
 - Reflective DLL Injection  
     - <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF Explanation</a>  
