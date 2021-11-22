@@ -22,7 +22,8 @@ int main(void)
     wVersionRequired = MAKEWORD(2, 2);
     if ((rv = WSAStartup(wVersionRequired, &wsaData)) != EXIT_SUCCESS)
     {
-        exit(0);
+        fprintf(stderr, "[-] Setup failed.\n");
+        return 1;
     }
 
     // Setup server address
