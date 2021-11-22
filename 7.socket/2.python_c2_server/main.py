@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
 
+"""
+Creator:    VPR
+Created:    November 21, 2021
+Updated:    November 22, 2021
+
+Disclaimer:
+    This program was designed as a proof-of-concept. It doesn't do anything
+    malicious and it is not intended to do so. Don't try to use it for any
+    malicious or illegal activity.
+"""
+
 import socket
 import sys
 import os
