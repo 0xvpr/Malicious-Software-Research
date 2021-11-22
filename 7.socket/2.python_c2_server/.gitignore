@@ -1,0 +1,13 @@
+# Folders
+bin
+build
+__pycache__
+
+# Compiled Files
+*.o
+*.obj
+*.exe
+*.pyc
+
+# Misc
+compile_flags.txt
