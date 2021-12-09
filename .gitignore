@@ -55,6 +55,4 @@ dkms.conf
 # Folders
 RTO
 
-# Misc
-set-env.sh
 compile_flags.txt

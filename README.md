@@ -22,7 +22,7 @@ and ultimately, **defending** against various strains of malicious software.
     - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/2.injection-techniques/1.crt">CreateRemoteThread</a>
 3. <a name="obfuscation-techniques">Obfuscation Techniques</a>
     - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/3.obfuscation-techniques/1.aes">AES encryption</a>
-    - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/3.obfuscation-techniques/1.xor">XOR encryption</a>
+    - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/3.obfuscation-techniques/2.xor">XOR encryption</a>
 4. <a name="evasion-techniques">Evasion Techniques</a>
 5. <a name="ransomware">Ransomware<a/>
     - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/5.ransomware/1.simple_recursive_encryptor">Simple Recursive Encryptor</a>
