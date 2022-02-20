@@ -1,3 +1,14 @@
+/**
+ * Creator:    VPR
+ * Created:    November 21, 2021
+ * Updated:    November 22, 2021
+ *
+ * Disclaimer:
+ *     This program was designed as a proof-of-concept. It doesn't do anything
+ *     malicious and it is not intended to do so. Don't try to use it for any
+ *     malicious or illegal activity.
+**/
+
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>

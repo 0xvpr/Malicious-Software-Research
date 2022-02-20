@@ -1,3 +1,14 @@
+/**
+ * Creator:    VPR
+ * Created:    November 21, 2021
+ * Updated:    February 20th, 2022
+ *
+ * Disclaimer:
+ *     This program was designed as a proof-of-concept. It doesn't do anything
+ *     malicious and it is not intended to do so. Don't try to use it for any
+ *     malicious or illegal activity.
+**/
+
 #include <windows.h>
 #include <stdio.h>
 
