@@ -1,10 +1,13 @@
 #!/bin/sh
 
 # Creator:    VPR
-# Created:    February 9th, 2022
-# Updated:    February 9th, 2022
+# Created:    February 20th, 2022
+# Updated:    February 20th, 2022
 
-__docker_img="mw-dev"
+# Description:
+#     Mounts local current working directory to /root in the container
 
-# Mounts local current working directory to /home/utopia in the container
-docker run -itv ${PWD}:/root:z "${__docker_img}"
+IMAGE="mw-dev"
+MOUNT_DIR="${PWD}"
+
+docker run -itv "${MOUNT_DIR}:/root:z" "${IMAGE}"
