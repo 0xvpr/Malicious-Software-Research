@@ -51,8 +51,11 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-
 # Folders
 RTO
 
+# Misc
+.bash_history
+.viminfo
+.zcompdump
 compile_flags.txt
