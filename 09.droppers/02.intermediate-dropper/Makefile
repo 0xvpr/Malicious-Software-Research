@@ -5,4 +5,4 @@ LDFLAGS  = -s
 all: dropper
 
 dropper:
-	$(CXX) main.cpp $(CXXFLAGS) $(LDFLAGS) -o $@.exe
+	$(CXX) Main.cpp $(CXXFLAGS) $(LDFLAGS) -o $@.exe
