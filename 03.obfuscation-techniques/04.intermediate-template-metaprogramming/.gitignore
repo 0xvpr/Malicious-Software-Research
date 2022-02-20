@@ -1,0 +1,9 @@
+# Folders
+bin
+build
+
+# Compiled Files
+*.o
+*.obj
+*.exe
+*.out
