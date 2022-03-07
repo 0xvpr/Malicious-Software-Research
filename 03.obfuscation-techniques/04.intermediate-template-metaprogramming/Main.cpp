@@ -20,7 +20,7 @@
 template <int size>
 struct Obfuscated {
 private:
-    char data[size];
+    mutable char data[size];
     unsigned char key[size];
 public:
     constexpr Obfuscated<size>(const char* text)
@@ -35,17 +35,17 @@ public:
         }
     }
     char* Data() const {
-        char* tmp = (char *)malloc(size * sizeof(char));
+        auto res = (char *)malloc(size * sizeof(char));
         for (int i = 0; i < size; i++) {
-            tmp[i] = data[i] ^ key[i % sizeof(key)];
+            res[i] = data[i] ^ key[i % sizeof(key)];
         }
-        return tmp;
+        return res;
     }
 };
 
-int main() {
+extern "C" int main() {
 
-    void* tmp;
+    void* tmp = nullptr;
     printf("De-obfuscated:\t%s\n", (char *)(tmp = OBF("Testing")));
     free(tmp);
 
