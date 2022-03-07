@@ -1,7 +1,7 @@
 /**
  * Creator:    VPR
  * Created:    February 20th, 2021
- * Updated:    February 20th, 2021
+ * Updated:    March 7th, 2022
  *
  * Disclaimer:
  *     This program was designed as a proof-of-concept. It doesn't do anything
@@ -46,8 +46,9 @@ public:
 extern "C" int main() {
 
     void* tmp = nullptr;
-    printf("De-obfuscated:\t%s\n", (char *)(tmp = OBF("Testing")));
+    printf("De-obfuscated:\t%s\n", reinterpret_cast<char *>(tmp = OBF("Testing")));
     free(tmp);
 
     return 0; 
+
 }
