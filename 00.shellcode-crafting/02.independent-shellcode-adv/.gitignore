@@ -1,0 +1,10 @@
+# Compiled files
+*.o
+*.ld
+*.obj
+*.exe
+*.dll
+*.bin
+
+# Misc
+compile_flags.txt

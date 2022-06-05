@@ -1,16 +1,14 @@
 TARGET  = write_hello.exe
-SCRIPT  = linker.ld
 
 CC      = x86_64-w64-mingw32-gcc
 CFLAGS  = -m64 -O2 -Wall -Wextra -Werror -nostdlib \
 		  -ffunction-sections -fno-asynchronous-unwind-tables -fno-ident \
-		  -Wl,-T$(SCRIPT),--no-seh
 
 ASM     = nasm
 ASFLAGS = -f win64
 
 LD      = x86_64-w64-mingw32-ld
-LDFLAGS = -s
+LDFLAGS = -s --no-seh
 
 BIN     = bin
 SRC     = src
@@ -34,17 +32,6 @@ $(C_OBJECTS): $(OBJ)/%.o : $(SRC)/%.c
 $(ASM_OBJECTS): $(OBJ)/%.o : $(SRC)/%.asm
 	$(ASM) $(ASFLAGS) $^ -o $@
 
-$(SCRIPT):
-	echo "ENTRY(alignstack)"             > $(SCRIPT)
-	echo "SECTIONS"                     >> $(SCRIPT)
-	echo "{"                            >> $(SCRIPT) 
-	echo "    .text :"                  >> $(SCRIPT)
-	echo "    {"                        >> $(SCRIPT)
-	echo "        *(.text.alignstack)"  >> $(SCRIPT)
-	echo "        *(.text.write_hello)" >> $(SCRIPT)
-	echo "    }"                        >> $(SCRIPT)
-	echo "}"                            >> $(SCRIPT)
-
 $(BUILD):
 	mkdir -p $@
 
@@ -54,5 +41,4 @@ $(BIN):
 clean:
 	rm -fr `find . -name "*.o"`
 	rm -fr `find . -name "*.exe"`
-	rm -fr `find . -name "*.ld"`
 	rm -fr `find . -name "*.bin"`

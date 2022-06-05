@@ -47,7 +47,7 @@ int main() {
 
     STARTUPINFOA        si{0};
     PROCESS_INFORMATION pi{0};
-    char*         tmp;
+    char*               tmp;
 
     // Invoke powershell
     CreateProcessA(

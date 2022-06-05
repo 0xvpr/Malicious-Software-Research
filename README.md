@@ -22,9 +22,11 @@ chmod +x build-image.sh run-image.sh
 07. [Client Server Models](#client-server-models)
 08. [Keyloggers](#keyloggers)
 09. [Droppers](#droppers)
+
 ### **Code Examples**
 00. <a name="shellcode-crafting">Shellcode Crafting</a>
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/00.shellcode-crafting/01.independent-shellcode">Position Independent Shellcode</a>
+  - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/00.shellcode-crafting/02.independent-shellcode">Advanced (with obfuscation) Position Independent Shellcode</a>
 01. <a name="storage-techniques">Storage Techniques</a>
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/01.storage-techniques/01.data">.data</a>
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/01.storage-techniques/02.text">.text</a>
@@ -50,8 +52,12 @@ chmod +x build-image.sh run-image.sh
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/09.droppers/02.intermediate-dropper">Intermediate Dropper (windows)</a>
 
 ### **Learning Resources**
+- Reversing C++ Classes and Structures
+    - <a href="https://www.blackhat.com/presentations/bh-dc-07/Sabanal_Yason/Paper/bh-dc-07-Sabanal_Yason-WP.pdf">Paul Vincent Sabanal & Mark Vincent Yason</a>
 - Reflective DLL Injection  
     - <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF Explanation</a>  
+- Executing Position Independent Shellcode from Object Files in Memory
+    - <a href="https://bruteratel.com/research/feature-update/2021/01/30/OBJEXEC/">Dark VortEx</a>  
 - Shellcode Crafting  
     - <a href="https://www.exploit-db.com/docs/english/13610-building-your-own-ud-shellcodes-part-1.pdf">fb1h2s</a>
 - Getting Familiar with Sockets
