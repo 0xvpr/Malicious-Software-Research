@@ -1,11 +1,11 @@
 # Creator:    VPR
 # Created:    February 20th, 2022
-# Updated:    February 20th, 2022
+# Updated:    May 29th, 2023
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Set env to avoid user input interruption during installation
-ENV TZ=America/Chicago
+ENV TZ=America/New_York
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install normal goodies
@@ -22,11 +22,12 @@ RUN apt-get install -y --no-install-recommends zsh \
                                                build-essential \
                                                mingw-w64 \
                                                gdb \
-                                               python3-dev
+                                               python3-dev \
+                                               nasm
 
 # Change login shell to zsh
 RUN chsh -s /bin/zsh $(whoami)
 
 # Create Utopia user && dir
 ENV HOME=/root
-WORKDIR /root
+WORKDIR /opt/mw-dev
