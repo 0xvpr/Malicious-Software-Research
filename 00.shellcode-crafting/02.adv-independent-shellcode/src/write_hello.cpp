@@ -18,7 +18,7 @@ template <int size>
 struct [[nodiscard]] Obfuscated
 {
 private:
-    char data[size];
+    unsigned char data[size];
     unsigned char key[size];
     unsigned char salt = __TIME__[1] + __TIME__[2] + __TIME__[3];
 public:
@@ -30,19 +30,19 @@ public:
             key[i] = (unsigned char)(salt ^ __TIME__[i % sizeof(__TIME__)]);
         }
         for (unsigned i = 0; i < size; i++) {
-            data[i] = text[i] ^ key[i % sizeof(key)];
+            data[i] = 0xFF & (text[i] ^ key[i % sizeof(key)]);
         }
     }
 
     char* Data(unsigned long long malloc) const
     {
-        char* tmp = (char *)((malloc_t)malloc)(size * sizeof(char));
+        unsigned char* tmp = (unsigned char *)((malloc_t)malloc)(size * sizeof(char));
         for (unsigned i = 0; i < size; i++)
         {
-            tmp[i] = data[i] ^ key[i % sizeof(key)];
+            tmp[i] = 0xFF & (data[i] ^ key[i % sizeof(key)]);
         }
 
-        return tmp;
+        return (char *)tmp;
     }
 };
 
