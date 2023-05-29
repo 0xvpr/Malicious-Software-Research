@@ -40,13 +40,16 @@ int main(void)
     // Create client socket
     server_addr.sin_family      = AF_INET;                  // IPv4
     server_addr.sin_port        = htons(8889);              // Port
-    server_addr.sin_addr.s_addr = inet_addr("198.186.1.2"); // Address
+    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); // Address
 
     // Create a TCP socket
     server_socket = socket(AF_INET, SOCK_STREAM, 0);
 
     // Connect to server
-    connect(server_socket, (SOCKADDR *)&server_addr, sizeof(server_addr));
+    if (connect(server_socket, (SOCKADDR *)&server_addr, sizeof(server_addr)) != 0)
+    {
+        return 1;
+    }
 
     // Receive data from the server
     memset(recv_buffer, 0, sizeof(recv_buffer));

@@ -1,7 +1,7 @@
 /**
  * Creator:    VPR
  * Created:    February 20th, 2021
- * Updated:    February 20th, 2021
+ * Updated:    March 7th, 2022
  *
  * Disclaimer:
  *     This program was designed as a proof-of-concept. It doesn't do anything
@@ -20,7 +20,7 @@
 template <int size>
 struct Obfuscated {
 private:
-    char data[size];
+    mutable char data[size];
     unsigned char key[size];
 public:
     constexpr Obfuscated<size>(const char* text)
@@ -35,19 +35,20 @@ public:
         }
     }
     char* Data() const {
-        char* tmp = (char *)malloc(size * sizeof(char));
+        auto res = (char *)malloc(size * sizeof(char));
         for (int i = 0; i < size; i++) {
-            tmp[i] = data[i] ^ key[i % sizeof(key)];
+            res[i] = data[i] ^ key[i % sizeof(key)];
         }
-        return tmp;
+        return res;
     }
 };
 
-int main() {
+extern "C" int main() {
 
-    void* tmp;
-    printf("De-obfuscated:\t%s\n", (char *)(tmp = OBF("Testing")));
+    void* tmp = nullptr;
+    printf("De-obfuscated:\t%s\n", reinterpret_cast<char *>(tmp = OBF("Testing")));
     free(tmp);
 
     return 0; 
+
 }

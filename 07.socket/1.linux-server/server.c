@@ -31,7 +31,7 @@ int main(void)
     // Setup server address
     server_addr.sin_family      = AF_INET;                  // IPv4
     server_addr.sin_port        = htons(8889);              // Port
-    server_addr.sin_addr.s_addr = inet_addr("198.186.1.2"); // Address
+    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1"); // Address
 
     // Creates a TCP Socket 
     server_socket = socket(AF_INET, SOCK_STREAM, 0);

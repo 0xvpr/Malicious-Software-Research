@@ -1,6 +1,6 @@
 PROJECT = obfuscated-string
 
-CC 		= x86_64-w64-mingw32-g++-posix
+CC      = x86_64-w64-mingw32-g++-posix
 CFLAGS  = -std=c++17 -O2 -Wall -Wextra -Werror
 LDFLAGS = -s
 

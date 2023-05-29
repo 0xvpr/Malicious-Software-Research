@@ -1,3 +1,9 @@
+/**
+ * Credits due to Dark VortEx of https://bruteratel.com
+ *
+ * hyperlink: https://bruteratel.com/research/feature-update/2021/01/30/OBJEXEC/
+**/
+
 #include <windows.h>
 #include <inttypes.h>
 
