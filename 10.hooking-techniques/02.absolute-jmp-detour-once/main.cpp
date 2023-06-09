@@ -1,3 +1,4 @@
+#include <errhandlingapi.h>
 #include <memoryapi.h>
 
 #include <stdint.h>
@@ -12,20 +13,39 @@ public:
         , original_bytes{ 0 }
         , detour_addr( nullptr )
         , is_hooked(false)
+        , zero_byte(0xCC)
     {
+        pHook = this;
         memcpy(original_bytes, original_addr, absolute_jmp_rax_size);
-    }
-    ~Hook()
-    {
-        restore();
+        SetUnhandledExceptionFilter( [](EXCEPTION_POINTERS* exceptionInfo) -> LONG WINAPI {
+            if (exceptionInfo->ExceptionRecord->ExceptionCode == EXCEPTION_BREAKPOINT) {
+                pHook->swap_zero_byte();
+                pHook->restore();
+
+                return EXCEPTION_CONTINUE_EXECUTION;
+            };
+
+            return EXCEPTION_CONTINUE_SEARCH;
+        });
     }
 
-    void detour(auto&& funcptr) {
+    void swap_zero_byte() {
+        DWORD dwProtect = 0;
+
+        VirtualProtect(detour_addr, 1, PAGE_EXECUTE_READWRITE, &dwProtect);
+        zero_byte ^= *(uint8_t *)detour_addr;
+        *(uint8_t *)detour_addr ^= zero_byte;
+        zero_byte ^= *(uint8_t *)detour_addr;
+        VirtualProtect(detour_addr, 1, dwProtect, &dwProtect);
+    }
+
+    void once(auto&& funcptr) {
         if (is_hooked) {
             return;
         }
 
         detour_addr = (void *)(+funcptr);
+        swap_zero_byte();
 
         DWORD dwProtect = 0;
         VirtualProtect(original_addr, absolute_jmp_rax_size, PAGE_EXECUTE_READWRITE, &dwProtect);
@@ -57,29 +77,31 @@ public:
         detour_addr = nullptr;
         is_hooked = false;
     }
+
+    static Hook*    pHook;
 private:
-    void*   original_addr;
-    uint8_t original_bytes[absolute_jmp_rax_size];
-    void*   detour_addr;
-    bool    is_hooked;
+    void*           original_addr;
+    uint8_t         original_bytes[absolute_jmp_rax_size];
+    void*           detour_addr;
+    bool            is_hooked;
+    uint8_t         zero_byte;
 };
+
+Hook* Hook::pHook = nullptr;
 
 int main(void) {
 
     auto hook = Hook(scanf);
-    hook.detour([](const char*, int* x_) -> void {
+    hook.once([](const char*, int* x_) -> void {
         puts("Detour\n");
         *x_ = 42069;
     });
 
     int x = 0;
-    scanf("%d", &x);
-    printf("x: %d\n", x);
-
-    hook.restore();
-
-    scanf("%d", &x);
-    printf("x: %d\n", x);
+    for (int i = 0; i < 4; ++i) {
+        scanf("%d", &x);
+        printf("x: %d\n", x);
+    }
 
     return 0;
 }

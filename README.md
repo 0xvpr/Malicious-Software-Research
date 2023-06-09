@@ -54,6 +54,7 @@ chmod +x build-image.sh run-image.sh
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/09.droppers/02.intermediate-dropper">Intermediate Dropper (windows)</a>
 10. <a name="hooking-techniques">Hooking Techniques</a>
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/10.hooking-techniques/01.absolute-jmp-detour">Absolute Jump Detour (x86_64 windows)</a>
+  - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/10.hooking-techniques/02.absolute-jmp-detour-once">Absolute Jump Detour Once (x86_64 windows)</a>
 
 ### **Learning Resources**
 - Reversing C++ Classes and Structures
