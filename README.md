@@ -22,6 +22,7 @@ chmod +x build-image.sh run-image.sh
 07. [Client Server Models](#client-server-models)
 08. [Keyloggers](#keyloggers)
 09. [Droppers](#droppers)
+10. [Hooking Techniques](#hooking-techniques)
 
 ### **Code Examples**
 00. <a name="shellcode-crafting">Shellcode Crafting</a>
@@ -49,8 +50,11 @@ chmod +x build-image.sh run-image.sh
 08. <a name="keyloggers">Keyloggers<a/>
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/08.keyloggers/01.simple-keylogger">Simple Keylogger (windows)</a>
 09. <a name="droppers">Droppers<a/>
-  - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/09.droppsers/01.simple-dropper">Simple Dropper (windows)</a>
+  - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/09.droppers/01.simple-dropper">Simple Dropper (windows)</a>
   - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/09.droppers/02.intermediate-dropper">Intermediate Dropper (windows)</a>
+10. <a name="hooking-techniques">Hooking Techniques</a>
+  - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/10.hooking-techniques/01.absolute-jmp-detour">Absolute Jump Detour (x86_64 windows)</a>
+  - <a href="https://github.com/0xvpr/Malicious-Software-Research/blob/main/10.hooking-techniques/02.absolute-jmp-detour-once">Absolute Jump Detour Once (x86_64 windows)</a>
 
 ### **Learning Resources**
 - Reversing C++ Classes and Structures
