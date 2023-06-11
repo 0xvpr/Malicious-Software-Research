@@ -1,22 +1,47 @@
+/**
+ * Creator:         VPR
+ * Created:         June 8th, 2023
+ *
+ * Updater:         VPR
+ * Updated:         June 10th, 2023
+ *
+ * Description:     This example aims to provide an example of how to leverage
+ *                  C++20 to perform function hooking via detours to spontaneous
+ *                  functions. This version of the PoC utilizes Windows own
+ *                  breakpoint API to restore original code at the initial execution.
+ *
+ *                  (This is intended for Intel CPU - 64-bit Windows machines)
+**/
+
 #include <errhandlingapi.h>
 #include <memoryapi.h>
 
 #include <stdint.h>
 #include <stdio.h>
 
-constexpr size_t absolute_jmp_rax_size = 12;
+/** DEFINITIONS **/
+typedef struct __attribute__((packed)) _AsmBlock {
+    uint16_t   mov_rax;
+    void*      address;
+    uint16_t   jmp_rax;
+} AsmBlock;
+
+/** CONSTANTS **/
+constexpr uint16_t mov_rax_ = ((uint16_t)0x1234 & 0xFF) == 0x34 ? 0xB848 : 0x48B8;
+constexpr uint16_t jmp_rax_ = ((uint16_t)0x1234 & 0xFF) == 0x34 ? 0xE0FF : 0xFFE0;
+constexpr size_t absolute_jmp_rax_size = sizeof(AsmBlock);
 
 class Hook {
 public:
-    Hook(auto&& original_addr_)
+    constexpr Hook(auto&& original_addr_)
         : original_addr( (void *)original_addr_ )
-        , original_bytes{ 0 }
-        , detour_addr( nullptr )
-        , is_hooked(false)
+        , restore_block( *(AsmBlock *)original_addr_)
+        , detour_block( (AsmBlock &)original_addr_)
+        , detour_func( nullptr )
+        , is_hooked(false) 
         , zero_byte(0xCC)
     {
         pHook = this;
-        memcpy(original_bytes, original_addr, absolute_jmp_rax_size);
         SetUnhandledExceptionFilter( [](EXCEPTION_POINTERS* exceptionInfo) -> LONG WINAPI {
             if (exceptionInfo->ExceptionRecord->ExceptionCode == EXCEPTION_BREAKPOINT) {
                 pHook->swap_zero_byte();
@@ -32,11 +57,11 @@ public:
     void swap_zero_byte() {
         DWORD dwProtect = 0;
 
-        VirtualProtect(detour_addr, 1, PAGE_EXECUTE_READWRITE, &dwProtect);
-        zero_byte ^= *(uint8_t *)detour_addr;
-        *(uint8_t *)detour_addr ^= zero_byte;
-        zero_byte ^= *(uint8_t *)detour_addr;
-        VirtualProtect(detour_addr, 1, dwProtect, &dwProtect);
+        VirtualProtect(detour_func, 1, PAGE_EXECUTE_READWRITE, &dwProtect);
+        zero_byte ^= *(uint8_t *)detour_func;
+        *(uint8_t *)detour_func ^= zero_byte;
+        zero_byte ^= *(uint8_t *)detour_func;
+        VirtualProtect(detour_func, 1, dwProtect, &dwProtect);
     }
 
     void once(auto&& funcptr) {
@@ -44,21 +69,14 @@ public:
             return;
         }
 
-        detour_addr = (void *)(+funcptr);
+        detour_func = (void *)(+funcptr);
         swap_zero_byte();
 
         DWORD dwProtect = 0;
         VirtualProtect(original_addr, absolute_jmp_rax_size, PAGE_EXECUTE_READWRITE, &dwProtect);
-
-        bool little_endian = ((uint32_t)0x12345678 & 0xFF) == 0x78;
-
-        *(uint16_t *)original_addr =
-            little_endian ? 0xB848 : 0x48B8;
-        *(uintptr_t *)(((uintptr_t)(original_addr)+2)) =
-            (uintptr_t)detour_addr;
-        *(uint16_t *)((uintptr_t)original_addr + 10) =
-            little_endian ? 0xE0FF : 0xFFE0;
-
+        detour_block.mov_rax = mov_rax_;
+        detour_block.address = detour_func;
+        detour_block.jmp_rax = jmp_rax_;
         VirtualProtect(original_addr, absolute_jmp_rax_size, dwProtect, &dwProtect);
 
         is_hooked = true;
@@ -69,20 +87,19 @@ public:
         }
 
         DWORD dwProtect = 0;
-
         VirtualProtect(original_addr, absolute_jmp_rax_size, PAGE_EXECUTE_READWRITE, &dwProtect);
-        memcpy(original_addr, original_bytes, absolute_jmp_rax_size);
+        detour_block = restore_block;
         VirtualProtect(original_addr, absolute_jmp_rax_size, dwProtect, &dwProtect);
 
-        detour_addr = nullptr;
+        detour_func = nullptr;
         is_hooked = false;
     }
-
-    static Hook*    pHook;
 private:
+    static Hook*    pHook;
     void*           original_addr;
-    uint8_t         original_bytes[absolute_jmp_rax_size];
-    void*           detour_addr;
+    const AsmBlock  restore_block;
+    AsmBlock&       detour_block;
+    void*           detour_func;
     bool            is_hooked;
     uint8_t         zero_byte;
 };
