@@ -30,21 +30,20 @@ typedef struct __attribute__((packed)) _AsmBlock {
 } AsmBlock;
 ```
 
-Finally the exception handler is set (awful technique but it works)
+Finally the instance pointer is set and called during the hook
 ```c
 // Hook constructor
 // (...)
 {
-    pHook = this; // static class variable
-    SetUnhandledExceptionFilter( [](EXCEPTION_POINTERS* exceptionInfo) -> LONG WINAPI {
-        if (exceptionInfo->ExceptionRecord->ExceptionCode == EXCEPTION_BREAKPOINT) {
-            pHook->swap_zero_byte();
-            pHook->restore();
+    hook_ptr = this; // static instance pointer variable
+}
+// int main(...)
+{
+    hook.detour([](char*, int* x) -> void {
+        puts("Detour\n");
+        *x = 42069;
 
-            return EXCEPTION_CONTINUE_EXECUTION;
-        };
-
-        return EXCEPTION_CONTINUE_SEARCH;
+        Hook::hook_ptr->restore();
     });
 }
 ```
