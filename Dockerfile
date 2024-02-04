@@ -1,6 +1,8 @@
-# Creator:    VPR
-# Created:    February 20th, 2022
-# Updated:    May 29th, 2023
+# Created by:   VPR
+# Created:      February 20th, 2022
+
+# Updated by:   VPR
+# Updated:      February 3rd, 2024
 
 FROM ubuntu:22.04
 
@@ -10,20 +12,21 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install normal goodies
 RUN apt-get update && apt upgrade -y
-RUN apt-get install -y --no-install-recommends zsh \
-                                               zsh-autosuggestions \
-                                               git \
-                                               curl \
-                                               wget \
-                                               vim \
-                                               tree \
-                                               make \
-                                               cmake \
-                                               build-essential \
-                                               mingw-w64 \
-                                               gdb \
-                                               python3-dev \
-                                               nasm
+RUN apt-get install -y --no-install-recommends \
+    zsh \
+    zsh-autosuggestions \
+    git \
+    curl \
+    wget \
+    vim \
+    tree \
+    make \
+    cmake \
+    build-essential \
+    mingw-w64 \
+    gdb \
+    python3-dev \
+    nasm
 
 # Change login shell to zsh
 RUN chsh -s /bin/zsh $(whoami)
