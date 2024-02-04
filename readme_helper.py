@@ -28,7 +28,7 @@ def generate_navigation(code_directories: List[CodeDirectory]) -> None:
     sys.stdout.write("## Navigation\n")
 
     for cd in code_directories:
-        sys.stdout.write(f"{cd.tag}. [{cd.clean_name}]({cd.name})\n")
+        sys.stdout.write(f"{cd.tag}. [{cd.clean_name}](#{cd.name})\n")
 
     sys.stdout.write("\n")
 
