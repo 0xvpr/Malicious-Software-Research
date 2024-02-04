@@ -1,8 +1,10 @@
 #!/bin/sh
 
-# Creator:    VPR
-# Created:    February 20th, 2022
-# Updated:    February 20th, 2022
+# Created by:   VPR
+# Created:      February 20th, 2022
+
+# Updated by:   VPR
+# Updated:      February 3rd, 2024
 
 # Description:
 #     Builds docker image using root Dockerfile
