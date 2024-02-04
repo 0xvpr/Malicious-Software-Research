@@ -12,6 +12,7 @@ chmod +x build-image.sh run-image.sh
 ```
 
 ## Navigation
+[Code Examples](#code-examples)
 01. [Storage Techniques](#storage-techniques)
 02. [Injection Techniques](#injection-techniques)
 03. [Obfuscation Techniques](#obfuscation-techniques)
@@ -22,6 +23,8 @@ chmod +x build-image.sh run-image.sh
 08. [Keyloggers](#keyloggers)
 09. [Droppers](#droppers)
 10. [Hooking Techniques](#hooking-techniques)
+
+[Learning Resources](#learning-resources)
 
 ### **Code Examples**
 01. <a name='storage-techniques'>Storage Techniques</a>
