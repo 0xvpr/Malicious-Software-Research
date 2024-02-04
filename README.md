@@ -55,12 +55,18 @@ chmod +x build-image.sh run-image.sh
 
 ### **Learning Resources**
 - Reversing C++ Classes and Structures
-    - <a href="https://www.blackhat.com/presentations/bh-dc-07/Sabanal_Yason/Paper/bh-dc-07-Sabanal_Yason-WP.pdf">Paul Vincent Sabanal & Mark Vincent Yason</a>
+  - <a href="https://www.blackhat.com/presentations/bh-dc-07/Sabanal_Yason/Paper/bh-dc-07-Sabanal_Yason-WP.pdf">Paul Vincent Sabanal & Mark Vincent Yason</a>
 - Reflective DLL Injection  
-    - <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF Explanation</a>  
+  - <a href="https://github.com/rapid7/metasploit-framework/wiki/Using-ReflectiveDll-Injection">MSF Explanation</a>  
 - Executing Position Independent Shellcode from Object Files in Memory
-    - <a href="https://bruteratel.com/research/feature-update/2021/01/30/OBJEXEC/">Dark VortEx</a>  
+  - <a href="https://bruteratel.com/research/feature-update/2021/01/30/OBJEXEC/">Dark VortEx</a>  
 - Shellcode Crafting  
-    - <a href="https://www.exploit-db.com/docs/english/13610-building-your-own-ud-shellcodes-part-1.pdf">fb1h2s</a>
+  - <a href="https://www.exploit-db.com/docs/english/13610-building-your-own-ud-shellcodes-part-1.pdf">fb1h2s</a>
 - Getting Familiar with Sockets
-    - <a href="https://www.youtube.com/watch?v=xCEKzqLTvqg&t=1185s">ActiveXSploit</a>
+  - <a href="https://www.youtube.com/watch?v=xCEKzqLTvqg&t=1185s">ActiveXSploit</a>
+- Anti Dynamic Analysis & Sandboxes
+  - <a href='https://0xpat.github.io/Malware_development_part_2/'>0xPat</a>
+- Anti Debugging
+  - <a href='https://0xpat.github.io/Malware_development_part_3/'>0xPat</a>
+- Anti Static Analysis Tricks
+  - <a href='https://0xpat.github.io/Malware_development_part_4/'>0xPat</a>
