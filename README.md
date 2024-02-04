@@ -12,16 +12,16 @@ chmod +x build-image.sh run-image.sh
 ```
 
 ## Navigation
-01. [Storage Techniques](storage-techniques)
-02. [Injection Techniques](injection-techniques)
-03. [Obfuscation Techniques](obfuscation-techniques)
-04. [Evasion](evasion)
-05. [Ransomware](ransomware)
-06. [Living Off The Land](living-off-the-land)
-07. [Socket](socket)
-08. [Keyloggers](keyloggers)
-09. [Droppers](droppers)
-10. [Hooking Techniques](hooking-techniques)
+01. [Storage Techniques](#storage-techniques)
+02. [Injection Techniques](#injection-techniques)
+03. [Obfuscation Techniques](#obfuscation-techniques)
+04. [Evasion](#evasion)
+05. [Ransomware](#ransomware)
+06. [Living Off The Land](#living-off-the-land)
+07. [Socket](#socket)
+08. [Keyloggers](#keyloggers)
+09. [Droppers](#droppers)
+10. [Hooking Techniques](#hooking-techniques)
 
 ### **Code Examples**
 01. <a name='storage-techniques'>Storage Techniques</a>
