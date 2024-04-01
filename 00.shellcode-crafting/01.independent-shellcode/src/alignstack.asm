@@ -10,6 +10,7 @@ alignstack:
     sub     rsp, byte +0x20     ; Allocate space for the write_hello function
 
     call    write_hello         ; Call to write_hello
+    xor     eax, eax
     mov     rsp, rdi            ; Restore stack pointer
 
     pop     rdi                 ; Restore rdi

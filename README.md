@@ -54,6 +54,7 @@ chmod +x build-image.sh run-image.sh
 10. <a name='hooking-techniques'>Hooking Techniques</a>
   - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/10.hooking-techniques/01.absolute-jmp-detour'>Absolute Jmp Detour</a>
   - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/10.hooking-techniques/02.absolute-jmp-detour-once'>Absolute Jmp Detour Once</a>
+  - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/10.hooking-techniques/03.relative-jmp-detour'>Relative Jmp Detour</a>
 
 
 ### **Learning Resources**
