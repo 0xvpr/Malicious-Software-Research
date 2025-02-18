@@ -52,7 +52,8 @@ Mkfile.old
 dkms.conf
 
 # Folders
-RTO
+.vscode
+secret
 
 # Misc
 .bash_history
