@@ -90,14 +90,14 @@ chmod +x build-image.sh run-image.sh
   - <a href="https://0xpat.github.io/Malware_development_part_3/">0xPat</a>
 - Anti Static Analysis Tricks
   - <a href="https://0xpat.github.io/Malware_development_part_4/">0xPat</a>
-### <a href="../LICENSE">Disclaimer</a>
+### <a href="DISCLAIMER.md">Disclaimer</a>
 - Educational Use Only: All examples and code herein are for educational and research purposes only.
 - No Warranty: The repository is provided “as is”, without warranty of any kind, express or implied.
 - Legal Responsibility: You are solely responsible for ensuring that your use of these materials complies with all applicable laws and regulations.
 
 If you have any doubts regarding the legality or ethics of using these examples, do not proceed.
 
-### <a href="../LICENSE">License</a>
+### <a href="LICENSE">License</a>
 This repository is released under the MIT License. In short:
 - You are free to use, modify, and distribute this code for personal or commercial purposes.
 - Please include credit where credit is due.
