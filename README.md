@@ -54,7 +54,8 @@ chmod +x build-image.sh run-image.sh
 04. <a name='obfuscation-techniques'>Obfuscation Techniques</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/01.simple-template-metaprogramming'>Simple Template Metaprogramming</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/02.intermediate-template-metaprogramming'>Intermediate Template Metaprogramming</a>
-    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/02.xor'>Xor</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/03.advanced-template-metaprogramming'>Advanced Template Metaprogramming</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/04.xor'>Xor</a>
 05. <a name='ransomware'>Ransomware</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/05.ransomware/01.simple-recursive-encryptor'>Simple Recursive Encryptor</a>
 06. <a name='evasion'>Evasion</a>
