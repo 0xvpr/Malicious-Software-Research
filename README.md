@@ -23,6 +23,8 @@ and ultimately, <i>defending</i> against various strains of malicious software a
     09. [Keyloggers](#keyloggers)
     10. [Droppers](#droppers)
     11. [Hooking Techniques](#hooking-techniques)
+    12. [Web Attacks](#web-attacks)
+    13. [Packet Attacks](#packet-attacks)
 - [Credits & Learning Resources](#credits--learning-resources)
 - [Disclaimer](#disclaimer)
 - [License](#license)
@@ -50,7 +52,8 @@ chmod +x build-image.sh run-image.sh
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/02.storage-techniques/02.text'>Text</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/02.storage-techniques/03.rsc'>Rsc</a>
 03. <a name='injection-techniques'>Injection Techniques</a>
-    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/03.injection-techniques/01.crt'>Crt</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/03.injection-techniques/01.create-remote-thread'>Create Remote Thread</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/03.injection-techniques/02.thread-hijacking'>Thread Hijacking</a>
 04. <a name='obfuscation-techniques'>Obfuscation Techniques</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/01.simple-template-metaprogramming'>Simple Template Metaprogramming</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/02.intermediate-template-metaprogramming'>Intermediate Template Metaprogramming</a>
@@ -73,6 +76,8 @@ chmod +x build-image.sh run-image.sh
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/11.hooking-techniques/01.absolute-jmp-detour'>Absolute Jmp Detour</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/11.hooking-techniques/02.absolute-jmp-detour-once'>Absolute Jmp Detour Once</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/11.hooking-techniques/03.relative-jmp-detour'>Relative Jmp Detour</a>
+12. <a name='web-attacks'>Web Attacks</a>
+13. <a name='packet-attacks'>Packet Attacks</a>
 
 ### Credits & Learning Resources
 - Reversing C++ Classes and Structures
