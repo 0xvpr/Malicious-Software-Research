@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import sys
+
+from scapy.layers.l2 import Ether
+from scapy.layers.inet import IP, UDP
+from scapy.packet import Raw
+from scapy.sendrecv import sendp, send
+
+from typing import Any
+
+def wait_and_send(it=0, packet: Ether| Any=None, data: Raw | Any = None):
+    input(f"{it}")
+    if type(packet) == Ether:
+        sendp(packet / data)
+    elif type(packet) == IP:
+        send(packet / data)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) !=3:
+        exit(1)
+
+    l2 = Ether(dst=f"{sys.argv[2]}")
+    l3 = IP(dst=f"{sys.argv[1]}")
+    l4 = UDP(dport=8888)
+
+    packets = [
+        l2 / l3 / l4,
+        l3 / l4,
+    ]
+
+    for i, pkt in enumerate(packets):
+        data = Raw(load=f"{i}")
+        wait_and_send(i, pkt, data)
