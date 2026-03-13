@@ -54,7 +54,7 @@ dkms.conf
 
 # Folders
 .vscode
-secret
+secret*
 
 # Misc
 .bash_history
