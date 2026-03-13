@@ -121,7 +121,7 @@ if __name__ == "__main__":
             if code_dir.is_dir() and len(tokens) > 1 and int(tokens[0]) >= 0:
                 code_directories.append(CodeDirectory(code_dir.name))
         except:
-            None
+            SystemExit()
 
     # Start generating the final list
     generate_header()

@@ -17,14 +17,20 @@ and ultimately, <i>defending</i> against various strains of malicious software a
     03. [Injection Techniques](#injection-techniques)
     04. [Obfuscation Techniques](#obfuscation-techniques)
     05. [Ransomware](#ransomware)
-    06. [Evasion](#evasion)
+    06. [Evasion Techniques](#evasion-techniques)
     07. [Living Off The Land](#living-off-the-land)
-    08. [Socket](#socket)
+    08. [Sockets](#sockets)
     09. [Keyloggers](#keyloggers)
     10. [Droppers](#droppers)
     11. [Hooking Techniques](#hooking-techniques)
     12. [Web Attacks](#web-attacks)
     13. [Packet Attacks](#packet-attacks)
+    14. [Compiler Quirks](#compiler-quirks)
+    15. [Shell Techniques](#shell-techniques)
+    16. [Persistence Techniques](#persistence-techniques)
+    17. [Vm Escape Techniques](#vm-escape-techniques)
+    18. [Browser Escape Techniques](#browser-escape-techniques)
+    19. [Container Escape Techniques](#container-escape-techniques)
 - [Credits & Learning Resources](#credits--learning-resources)
 - [Disclaimer](#disclaimer)
 - [License](#license)
@@ -61,12 +67,15 @@ chmod +x build-image.sh run-image.sh
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/04.obfuscation-techniques/04.xor'>Xor</a>
 05. <a name='ransomware'>Ransomware</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/05.ransomware/01.simple-recursive-encryptor'>Simple Recursive Encryptor</a>
-06. <a name='evasion'>Evasion</a>
-    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/06.evasion/01.anti-dynamic-analysis-techniques'>Anti Dynamic Analysis Techniques</a>
+06. <a name='evasion-techniques'>Evasion Techniques</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/06.evasion-techniques/01.anti-dynamic-analysis-techniques'>Anti Dynamic Analysis Techniques</a>
 07. <a name='living-off-the-land'>Living Off The Land</a>
-08. <a name='socket'>Socket</a>
-    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/08.socket/1.linux-server'>Linux Server</a>
-    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/08.socket/2.python-c2-server'>Python C2 Server</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/07.living-off-the-land/01.python-shellcode-exec'>Python Shellcode Exec</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/07.living-off-the-land/ps1-shellcode-exec.ps1'>Ps1</a>
+08. <a name='sockets'>Sockets</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/08.sockets/01.linux-server'>Linux Server</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/08.sockets/02.python-c2-server'>Python C2 Server</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/08.sockets/03.udp-flood'>Udp Flood</a>
 09. <a name='keyloggers'>Keyloggers</a>
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/09.keyloggers/01.simple-keylogger'>Simple Keylogger</a>
 10. <a name='droppers'>Droppers</a>
@@ -78,6 +87,17 @@ chmod +x build-image.sh run-image.sh
     - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/11.hooking-techniques/03.relative-jmp-detour'>Relative Jmp Detour</a>
 12. <a name='web-attacks'>Web Attacks</a>
 13. <a name='packet-attacks'>Packet Attacks</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/13.packet-attacks/01.raw-udp-packet-attack'>Raw Udp Packet Attack</a>
+14. <a name='compiler-quirks'>Compiler Quirks</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/14.compiler-quirks/01.gcc'>Gcc</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/14.compiler-quirks/02.mingw'>Mingw</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/14.compiler-quirks/03.clang'>Clang</a>
+    - <a href='https://github.com/0xvpr/Malicious-Software-Research/blob/main/14.compiler-quirks/04.msvc'>Msvc</a>
+15. <a name='shell-techniques'>Shell Techniques</a>
+16. <a name='persistence-techniques'>Persistence Techniques</a>
+17. <a name='vm-escape-techniques'>Vm Escape Techniques</a>
+18. <a name='browser-escape-techniques'>Browser Escape Techniques</a>
+19. <a name='container-escape-techniques'>Container Escape Techniques</a>
 
 ### Credits & Learning Resources
 - Reversing C++ Classes and Structures
